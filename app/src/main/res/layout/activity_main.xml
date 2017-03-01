@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.daniellondono.geaometrialondo.MainActivity"
+    android:weightSum="1"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menu"
+        android:layout_weight="0.06"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:fontFamily="casual"
+        android:typeface="monospace"
+        android:textSize="24sp"
+        android:lineSpacingExtra="8sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="center" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Menu"
+                android:weightSum="1"><![CDATA[
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0.95">
+
+                ]]>
+
+                <RadioButton
+                    android:text="@string/Cuadro"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:id="@+id/Cuadro"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:fontFamily="casual"
+                    android:textSize="18sp"
+                    android:textAlignment="viewStart"
+                    android:onClick="onRadioButton"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:text="@string/Circulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:id="@+id/Circulo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:fontFamily="casual"
+                    android:textSize="18sp"
+                    android:textAlignment="viewStart"
+                    android:onClick="onRadioButton"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:text="@string/Triangulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/Triangulo"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:fontFamily="casual"
+                    android:textSize="18sp"
+                    android:textAlignment="viewStart"
+                    android:onClick="onRadioButton"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:text="@string/Cubo"
+                    android:layout_width="match_parent"
+                    android:id="@+id/Cubo"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:fontFamily="casual"
+                    android:textSize="18sp"
+                    android:textAlignment="viewStart"
+                    android:onClick="onRadioButton"
+                    android:checked="false"
+                    android:layout_height="40dp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/et_Longitud"
+                    android:layout_width="213dp"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:hint="Longitud"
+                    android:inputType="numberDecimal"
+                    android:fontFamily="casual"
+                    android:textColor="@android:color/background_dark"
+                    android:textStyle="normal|bold"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/ll_contenedor_Cuadro"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.06">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        app:srcCompat="@drawable/cuadro"
+                        android:id="@+id/imageViewCuadro"
+                        android:layout_height="115dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_contenedor_Circulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.06"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="115dp"
+                        app:srcCompat="@drawable/circulo"
+                        android:id="@+id/imageCirculo" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_contenedor_Triangulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.06"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="115dp"
+                        app:srcCompat="@drawable/triangulo"
+                        android:id="@+id/imageTriangulo" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_contenedor_Cubo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.06"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="115dp"
+                        app:srcCompat="@drawable/cubo"
+                        android:id="@+id/imageCubo" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.31" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:id="@+id/Contenedor_Perimetro">
+
+        <TextView
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/PerimetroNumero"
+            android:layout_weight="1"
+            android:fontFamily="casual"
+            android:textSize="18sp"
+            android:textColor="@android:color/background_dark"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:id="@+id/Contenedor_Area">
+
+        <TextView
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/AreaNumero"
+            android:layout_weight="1"
+            android:fontFamily="casual"
+            android:textSize="18sp"
+            android:textColor="@android:color/background_dark"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:id="@+id/Contenedor_Volumen"
+        android:visibility="gone">
+
+        <TextView
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/VolumenNumero"
+            android:layout_weight="1"
+            android:fontFamily="casual"
+            android:textSize="18sp"
+            android:textColor="@android:color/background_dark"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+</LinearLayout>
